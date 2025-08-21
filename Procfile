@@ -1,1 +1,1 @@
-web: gunicorn insta_api:app
+gunicorn insta_api:app
