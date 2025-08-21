@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Instagram Downloader</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>📥 Instagram Downloader</h1>
+      <p>Paste any Instagram Reel / Video / Post link and download in best quality.</p>
+    </header>
+    <main>
+      <form id="dlForm">
+        <input id="urlInput" type="url" placeholder="https://www.instagram.com/reel/..." required>
+        <button id="dlBtn" type="submit">Download</button>
+      </form>
+      <div class="progress-card" id="progressCard" hidden>
+        <div class="row">
+          <span id="statusText">Queued…</span>
+          <span id="percentText">0%</span>
+        </div>
+        <div class="bar"><div id="barFill" style="width:0%"></div></div>
+        <div class="meta">
+          <span id="speedText"></span>
+          <span id="etaText"></span>
+        </div>
+        <div id="doneRow" class="done-row" hidden>
+          <a id="downloadLink" class="btn" href="#" download>Download file</a>
+        </div>
+        <div id="errorRow" class="error" hidden></div>
+      </div>
+    </main>
+    <footer>
+      <small>Personal use only. Respect terms and copyright.</small>
+    </footer>
+  </div>
+</body>
+</html>
